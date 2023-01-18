@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<!--<button name="set_supply_chain" type="object" string="Supply Chain" states="technical" class="btn-primary"/>-->
+	<record id="material_purchase_requisition_inherit_form" model="ir.ui.view">
+	    <field name="name">Material Purchase Requisition Inherit Form</field>
+	    <field name="model">material.purchase.requisition</field>
+	    <field name="inherit_id" ref="material_purchase_requisitions.material_purchase_requisition_form_view"/>
+	    <field name="arch" type="xml">
+	    	<xpath expr="//button[@name='requisition_confirm']" position="replace">
+	    		<button name="set_submit" type="object" string="Submit" states="draft" class="btn-primary"
+	    			 groups="custom_project_manager.group_submit"/>
+	    		<button name="set_project_manager" type="object" string="Confirm Project Manager" states="submit" class="btn-primary"
+	    			 groups="custom_project_manager.group_project_manager"/>
+	    	</xpath>
+
+	    	<xpath expr="//button[@name='set_project_manager']" position="after">
+	    			<button name="set_technical_office" type="object" string="Direct of Project Management" states="project" class="btn-primary"
+	    				groups="custom_project_manager.group_technical_office"/>
+
+	    			<button name="set_store_manager" type="object" string="Store Management" states="technical" class="btn-primary" groups="custom_project_manager.group_store_manager"/>
+
+
+	    			<button name="set_supply_chain" type="object" string="Supply Chain" class="btn-primary"
+	    				attrs="{'invisible':['|',('check_po', '=', False), ('state', '!=', 'store')]}" groups="custom_project_manager.group_supply_chain"/>
+
+	    			<button name="set_supply_chain_done" id="supply_cahin_done" type="object" string="Supply Chain" class="btn-primary"
+	    				attrs="{'invisible':['|',('check_po', '=', True), ('state', '!=', 'store')]}" groups="custom_project_manager.group_supply_chain"/>
+
+	    			<button name="set_procurement_contract" type="object" string="procurement And Contract"  class="btn-primary" attrs="{'invisible':['|','|',('check_po', '=', False),('check_price', '=', True),('state', '!=', 'supply_chain')]}" groups="custom_project_manager.group_procurment_contract"/>
+
+
+	    			 <button name="set_supply_chain_manager" type="object" string="Supply Chain Manager" class="btn-primary" 
+	    				 attrs="{'invisible':['|',('check_price', '=', True),('state', '!=', 'procurement')]}" groups="custom_project_manager.group_supply_chain_manager"/>
+
+	    			<button name="set_cost_control" type="object" string="Cost Control"  class="btn-primary"
+	    				attrs="{'invisible':['|',('check_price', '=', True), ('state', '!=', 'supply_manager')]}" groups="custom_project_manager.group_cost_control"/>
+
+	    			<button name="set_ceo_approv" type="object" string="CEO Approved" states="cost_control" class="btn-primary"
+	    				attrs="{'invisible':['|',('check_price', '=', True), ('state', '!=', 'cost_control')]}" groups="custom_project_manager.group_ceo_approve"/>
+
+	    			
+	    			
+	    			
+	    			
+<!-- 	    			<button name="set_cancel" type="object" string="Cancel" attrs="{'invisible':[('state', '=', 'cancel')]}" class="btn-primary"/>
+ --> 
+
+<!--   	    			<button name="set_to_draft" type="object" string="Set To Draft"  class="btn-primary"/>
+ -->
+	    		   <!--  <button name="request_stock" type="object" string="Create Picking and PO"/>
+	    		    <button name="request_stock_picking" type="object" string="Create Stock Picking Sarry"/>
+	    		    <button name="request_purchase_order" type="object" string="Create Purchase Order Sarry"/>
+	    		     -->
+
+	    	</xpath>
+
+	    	<xpath expr="//button[@name='action_show_po']" position="replace">
+	    		 <button class="oe_stat_button" type="object" icon="fa-book" name="action_show_requisition" string="Purchase Requisition"/>
+	    	</xpath>
+	    	<xpath expr="//button[@name='manager_approve']" position="attributes">
+	    		<attribute name="invisible">1</attribute>
+	    	</xpath>
+
+
+	    	<xpath expr="//form/header/field[@name='state']" position="replace">
+	    		<field name="state" widget="statusbar" string="confirm1"  
+                                        statusbar_visible="draft,project,technical"/>
+	    	</xpath>
+
+	    	<xpath expr="//form/sheet/group/group/field[@name='requisiton_responsible_id']" position="replace">
+	    		<field name="requisiton_responsible_id" invisible="1"/>
+	    	</xpath>
+
+	    	<xpath expr="//form/sheet/group/group/field[@name='receive_date']" position="replace">
+	    		<field name="receive_date" invisible="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/group/group/field[@name='date_end']" position="replace">
+	    		<field name="date_end" invisible="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/group/group/field[@name='analytic_account_id']" position="replace">
+	    		<field name="analytic_account_id" readonly="True" force_save="1"/>
+	    	</xpath>
+
+
+	    	<xpath expr="//form/sheet/group/group/field[@name='employee_id']" position="before">
+	    		<field name="check_po" invisible="1"/>
+	    		<field name="check_price" invisible="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/group/group/field[@name='analytic_account_id']" position="before">
+	    		<field name="partner_id" attrs="{'required':[('state', '=', 'technical')]}"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/group/group/field[@name='analytic_account_id']" position="before">
+	    		<field name="project_id" attrs="{'required':[('state', '=', 'technical')]}"/>
+	    	</xpath>
+
+	    	<xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='custom_picking_type_id']" position="replace">
+	    		<field name="delivery_type_id" readonly="True" force_save="1"/>
+	    	</xpath>
+
+	    	<xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='location_id']" position="after">
+	    		<field name="recipt_type_id" readonly="True" force_save="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='location_id']" position="replace">
+	    		<field name="location_id" readonly="True"  invisible="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='dest_location_id']" position="replace">
+	    		<field name="dest_location_id" readonly="True" invisible="1"/>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/notebook/page[3]" position="attributes">
+	    		<attribute name="invisible">1</attribute>
+	    	</xpath>
+
+
+
+	    	<xpath expr="//form/sheet/notebook/page[2]/group/group/field[@name='delivery_picking_id']" position="attributes">
+	    		<attribute name="invisible">1</attribute>
+	    	</xpath>
+
+	    	<xpath expr="//form/sheet/notebook/page/field[@name='requisition_line_ids']/tree/field[@name='uom']" position="attributes">
+	    		<attribute name="invisible">1</attribute>
+	    	</xpath>
+
+	    	
+	    	<!-- Inherit putrchase_requisition_line>-->
+	    	<xpath expr="//form/sheet/notebook/page/field[@name='requisition_line_ids']/tree/field[@name='qty']" position="after">
+	    		<!-- <field name="divion_no"/>
+	    		<field name="work_details"/>
+	    		<field name="work_type_ids" widget="many2many_tags"/> -->
+	    	
+	    		<field name="uom" readonly="1" force_save="1" />
+	    	<field name="qty_available" force_save="1" invisible="1"/>
+	    		<field name="qty_pick" force_save="1"/>
+	    		<field name="qty_po" force_save="1"/>
+	    		<field name="price_unit"/>
+	    		<field name="sub_total"/>
+	    		<field name="check_po" invisible="1"/>		
+	    	</xpath>
+
+	    	
+	    	<xpath expr="//form/sheet/notebook/page/field[@name='requisition_line_ids']" position="after">
+	    		<group class="oe_subtotal_footer oe_right">
+                    <field name="price_total"  colspan="2"/>
+                 </group>
+            </xpath>
+
+	    	<xpath expr="//form/sheet/notebook/page/field[@name='requisition_line_ids']/tree/field[@name='requisition_type']" position="attributes">
+	    	    <attribute name="invisible">1</attribute>
+	    	</xpath>
+	    	<xpath expr="//form/sheet/notebook/page/field[@name='requisition_line_ids']/tree/field[@name='partner_id']" position="attributes">
+	    	    <attribute name="invisible">1</attribute>
+	    	</xpath>
+	    </field>
+	</record>
+</odoo>
+
+

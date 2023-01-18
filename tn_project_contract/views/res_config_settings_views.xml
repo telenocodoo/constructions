@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.project.contract</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+
+                    <div class="app_settings_block" data-string="Project Contract" id="project_contract" string="Project Contract" data-key="tn_project_contract">
+                        <h2>Project Contract Management</h2>
+                        <div class="row mt16 o_settings_container" id="project_contract_setting">
+                            <div class="col-12 col-lg-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <span class="o_form_label">Management Products Invoice</span>
+                                    <div class="text-muted content-group mt16">
+                                        <div class="row mt8">
+                                             <label for="product_works_id" class="col-lg-4 o_light_label"/>
+                                            <field name="product_works_id" class="text-center oe_inline" />
+                                        </div>
+                                         <div class="row mt8">
+                                             <label for="product_adv_pay_id" class="col-lg-4 o_light_label"/>
+                                            <field name="product_adv_pay_id" class="text-center oe_inline" />
+                                        </div>
+                                        <div class="row mt8">
+                                             <label for="product_retain_warranty_id" class="col-lg-4 o_light_label"/>
+                                            <field name="product_retain_warranty_id" class="text-center oe_inline"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+
+        <record id="project_contract_config_settings_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'tn_project_contract', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="project_contract_config_settings_menu" name="Settings"
+            parent="tn_project_contract.project_contract_config_menu" sequence="0" 
+            action="project_contract_config_settings_action"
+            groups="base.group_system"/>
+    </data>
+</odoo>

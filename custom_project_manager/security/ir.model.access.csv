@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+project_manager,Project Manager,model_project_manager,,1,1,1,1
+acc_service_type,Service Type,model_service_type,,1,1,1,1
