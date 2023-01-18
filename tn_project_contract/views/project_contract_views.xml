@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form View -->
+    <record id="project_contract_form" model="ir.ui.view">
+        <field name="name">Project Contract Form</field>
+        <field name="model">project.contract</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="make_confirm"  string="Confirm" states="draft" type="object" class="btn-primary"/>
+                    <field name="state" widget="statusbar"  statusbar_visible="draft,confirm"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_show_invoice_payment" class="oe_stat_button"  type="object" icon="fa-pencil-square-o"
+                            attrs="{'invisible':[('check_payment', '=', False), ('check_invoice', '=', False)]}">
+                            <field name="payment_count" widget="statinfo" string="Invoice Paymen"/>
+                        </button>
+                        <button name="action_show_works_invoice" class="oe_stat_button"  type="object" icon="fa-pencil-square-o"
+                            attrs="{'invisible':[('check_invoice', '=', False)]}">
+                            <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                    </div> 
+                    <div class="oe_avatar"  name="button_box">
+                         <button colspan="2" name="create_payment_invoice" type="object" string="Create Paymen Invoice" class="oe_right btn-secondary"
+                            attrs="{'invisible':['|','|',('check_payment', '=', True), ('check_invoice', '=', True), ('state', '=', 'draft')]}"/>
+                          <button colspan="2" name="create_invoice" type="object" string="Create Invoice" class="oe_right btn-secondary"
+                            attrs="{'invisible':[('check_payment', '=', False), ('check_invoice', '=', False)]}"/>
+                    </div>
+                     <div class="oe_title">
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name"/><br/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group> 
+                        <group>
+                            <field name="partner_id" options="{'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                            <field name="project_id" options="{'no_create_edit':True, 'no_create': True, 'no_open': True}"/>
+                            <field name="analytic_id"/>
+                            <field name="account_id" invisible="1"/>
+                            <field name="invoice_ids" widget="many2many_tags" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="date"/>
+                            <label for="payment_percentage"/>
+                            <div class="o_row">
+                                <field name="payment_percentage"/><span>%</span>
+                            </div>
+                            <label for="retained_warranty"/>
+                            <div class="o_row">
+                                <field name="retained_warranty"/><span>%%</span>
+                            </div>
+                             <field name="payment_advance" invisible="1"/>
+                            <field name="payment_works" invisible="1"/>
+                            <field name="check_invoice" invisible="1"/>
+                            <field name="check_payment" invisible="1"/>
+                            <field name="active" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Division Line">
+                            <field name="contract_line_ids">
+                                <tree editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="description"/>
+                                    <field name="invoice_request"/>
+                                    <field name="invoiced" readonly="1"/>
+                                    <field name="price"/>
+                                    <field name="remaining"/>
+                                </tree>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="total_amount"  colspan="2"/>
+                                <field name="total_invoice" colspan="2" invisible="1"/>
+                             </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="project_contract_tree" model="ir.ui.view">
+        <field name="name">Project Contract List</field>
+        <field name="model">project.contract</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="project_contract_search" model="ir.ui.view">
+        <field name="name">Project Contract</field>
+        <field name="model">project.contract</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+<!--                 <filter string="Without Authors" name="without_author" domain="[('author_ids','=',False)]"/>
+ -->            </search>
+        </field>
+    </record>
+
+     <!-- Action -->
+    <record id='project_contract_action' model='ir.actions.act_window'>
+        <field name="name">Project Contract</field>
+        <field name="res_model">project.contract</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menu Item -->
+    <menuitem id="project_contract_root_menu"  name="Contracts" sequence="1" web_icon="tn_project_contract,static/description/icon.png"/>
+    <menuitem id="project_contract_menu" name="Project Contract" parent="project_contract_root_menu" sequence="2" action="project_contract_action"/>
+    <menuitem id="project_contract_config_menu" name="Configration" sequence="3" parent="project_contract_root_menu"/>
+</odoo>
+
+
+
+

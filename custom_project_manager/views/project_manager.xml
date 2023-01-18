@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Form View -->
+    <record id="project_manager_form" model="ir.ui.view">
+        <field name="name">Project Manager Form</field>
+        <field name="model">project.manager</field>
+        <field name="arch" type="xml">
+            <form>
+                 <header>
+                    <button name="set_supmit" type="object" string="Supmit" states="draft" class="btn-primary"/>
+                    <button name="set_confirm_project" type="object" string="Confirm Project" states="supmit" class="btn-primary"/>
+                    <button name="set_cancel" type="object" states="draft" string="Cancel" />
+                    <field name="state" widget="statusbar"  
+                            statusbar_visible="draft,supmit,confirm"/>
+                </header>
+                <sheet>
+                  <div class="oe_title">
+                       <h1><field name="name" placeholder="Project Name"/></h1>
+                    </div>  
+                    <group>
+                        <group>
+                            <field name="code"/>
+                            <field name="emp_id"/>
+                            <field name="warehouse_id"/>
+                        </group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="acc_analytic_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                     <field name="message_follower_ids" widget="mail_followers"/>
+                     <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="project_manager_tree" model="ir.ui.view">
+        <field name="name">Project Manager List</field>
+        <field name="model">project.manager</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="emp_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="project_manager_search" model="ir.ui.view">
+        <field name="name">Project Manager Search</field>
+        <field name="model">project.manager</field>
+        <field name="arch" type="xml">
+            <search>
+               <field name="name"/>
+               <field name="emp_id"/>
+            </search>
+        </field>
+    </record>
+
+    <record id='project_manager_action' model='ir.actions.act_window'>
+        <field name="name">Project Manager</field>
+        <field name="res_model">project.manager</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Project Management" id="menu_project_manager_root" sequence="88"/>
+    <menuitem name="Project" id="menu_project_manager" parent="menu_project_manager_root" action="project_manager_action"/>
+</odoo>

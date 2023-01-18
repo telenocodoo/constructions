@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="demo_custody_description" model="custody.description">
+            <field name="name">صيانة ونظافة</field>
+        </record>
+        <record id="demo_custody_description1" model="custody.description">
+            <field name="name">المستلزمات المكتبية</field>
+        </record>
+        <record id="demo_custody_description2" model="custody.description">
+            <field name="name">الضيافة والحفلات</field>
+        </record>
+        <record id="demo_custody_description3" model="custody.description">
+            <field name="name">وسائل النقل</field>
+        </record>
+        <record id="demo_custody_description4" model="custody.description">
+            <field name="name">إعلامية ومطبوعات</field>
+        </record>
+
+    </data>
+</odoo>

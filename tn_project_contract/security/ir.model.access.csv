@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acc_project_contract,project.contract,model_project_contract,,1,1,1,1
+acc_project_contract_line,project.contract.line,model_project_contract_line,,1,1,1,1

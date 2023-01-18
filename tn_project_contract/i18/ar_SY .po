@@ -1,0 +1,468 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* tn_project_contract
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-12-26 19:38+0000\n"
+"PO-Revision-Date: 2022-12-26 19:38+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid " You cannot create payment invoice  because there is no Division line."
+msgstr "لا يمكنك إنشاء فاتورة دفع لأنه لا يوجد سطر القسم"
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.res_config_settings_view_form
+msgid "<span class=\"o_form_label\">Management Products Invoice</span>"
+msgstr "ادارة المنتجات "
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__account_id
+msgid "Account Move"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__invoice_ids
+msgid "Account invoice"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__active
+msgid "Active"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_bank_statement_line__amount_works
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_move__amount_works
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_payment__amount_works
+msgid "Amount  Works"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__analytic_id
+msgid "Analytic Account"
+msgstr "الحساب التحليلي"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__check_invoice
+msgid "Check Invoice"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__check_payment
+msgid "Check Payment"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model,name:tn_project_contract.model_res_config_settings
+msgid "Config Settings"
+msgstr "تهيئة الإعدادات "
+
+#. module: tn_project_contract
+#: model:ir.ui.menu,name:tn_project_contract.project_contract_config_menu
+msgid "Configration"
+msgstr "التهيئة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields.selection,name:tn_project_contract.selection__project_contract__state__confirm
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__contract_line_ids
+msgid "Contract Line"
+msgstr "خط العقد"
+
+#. module: tn_project_contract
+#: model:ir.ui.menu,name:tn_project_contract.project_contract_root_menu
+msgid "Contracts"
+msgstr "العقود"
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Create Invoice"
+msgstr "انشاء فاتورة المستخلص"
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Create Paymen Invoice"
+msgstr "انشاء فاتورة الدفعه المقدمة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__create_uid
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__create_date
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__partner_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__date
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__display_name
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Division Line"
+msgstr "القسم"
+
+#. module: tn_project_contract
+#: model:ir.model.fields.selection,name:tn_project_contract.selection__project_contract__state__draft
+msgid "Draft"
+msgstr "المسودة"
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "Enter value in invoice request"
+msgstr "ادخل قيمة في حقل طلب الفاتورة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__id
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__id
+msgid "ID"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_needaction
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_has_error
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__invoice_count
+msgid "Invoice Count"
+msgstr ""
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Invoice Paymen"
+msgstr "فاتورة الدفعه المقدمة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__invoice_request
+msgid "Invoice Request"
+msgstr "مبلغ الفاتورة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_bank_statement_line__check_invoice
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_move__check_invoice
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_payment__check_invoice
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__invoiced
+msgid "Invoiced"
+msgstr "المفوتر"
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.project_contract_form
+msgid "Invoices"
+msgstr "الفواتير"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_bank_statement_line__is_pay
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_move__is_pay
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_payment__is_pay
+msgid "Is Payment"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model,name:tn_project_contract.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: tn_project_contract
+#: model:ir.model,name:tn_project_contract.model_account_move_line
+msgid "Journal Item"
+msgstr "عنصر اليومية"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract____last_update
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__write_uid
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__write_date
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_main_attachment_id
+msgid "Main Attachment"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "No Taxs defined, create new tax from account tax"
+msgstr ""
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "No account defined for product \"%s\"."
+msgstr "لايوجد حساب معرف لهذا المنتج"
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "No product defined check product in project contract setting"
+msgstr "لايوجد منتج معرف تاكد من اضافة المنتج من قائمة الاعدادات"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__payment_advance
+msgid "Payment Advance"
+msgstr "الدفعة المقدمة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__payment_percentage
+msgid "Payment Percentage %"
+msgstr "نسبة الدفعة المقدمة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__payment_works
+msgid "Payment Works"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__price
+msgid "Price"
+msgstr "السعر"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__product_id
+msgid "Product"
+msgstr "المنتج"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_res_config_settings__product_works_id
+msgid "Product Works"
+msgstr "منتج الاعمال"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_res_config_settings__product_adv_pay_id
+msgid "Product advance payment"
+msgstr "منتج الدفعه المقدمة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_res_config_settings__product_retain_warranty_id
+msgid "Product retained warenty"
+msgstr "منتج الضمان المحتجز"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__project_id
+msgid "Project"
+msgstr "المشروع"
+
+#. module: tn_project_contract
+#: model:ir.actions.act_window,name:tn_project_contract.project_contract_action
+#: model:ir.model,name:tn_project_contract.model_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_bank_statement_line__project_contract_id
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_move__project_contract_id
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_move_line__project_contract_line_id
+#: model:ir.model.fields,field_description:tn_project_contract.field_account_payment__project_contract_id
+#: model:ir.ui.menu,name:tn_project_contract.project_contract_menu
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.res_config_settings_view_form
+msgid "Project Contract"
+msgstr "عقد المشروع"
+
+#. module: tn_project_contract
+#: model:ir.model,name:tn_project_contract.model_project_contract_line
+msgid "Project Contract Line"
+msgstr ""
+
+#. module: tn_project_contract
+#: model_terms:ir.ui.view,arch_db:tn_project_contract.res_config_settings_view_form
+msgid "Project Contract Management"
+msgstr "ادارة عقد المشروع"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__contract_id
+msgid "Reference Project Contract"
+msgstr "مرجع عقد المشروع"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__retained_warranty
+msgid "Retained Warenty %"
+msgstr "نسبة الضمان المحتجز"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.actions.act_window,name:tn_project_contract.project_contract_config_settings_action
+#: model:ir.ui.menu,name:tn_project_contract.project_contract_config_settings_menu
+msgid "Settings"
+msgstr "الاعدادات"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__state
+msgid "State"
+msgstr "الحالة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__total_amount
+msgid "Total"
+msgstr "المبلغ الكلي"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__total_invoice
+msgid "Total Invoice"
+msgstr "مبلغ الفاتورة"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: tn_project_contract
+#: model:ir.model.fields,help:tn_project_contract.field_project_contract__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "You can only delete project contract in draft."
+msgstr "فقط في حالة المسودة يمكنك حذف سجل العقد  "
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__description
+msgid "description"
+msgstr "الوصف"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract__payment_count
+msgid "payment Count"
+msgstr ""
+
+#. module: tn_project_contract
+#: code:addons/tn_project_contract/models/project_contract.py:0
+#, python-format
+msgid "payment advance percentage should not equal 0"
+msgstr "نسبة الدفعه المقدمة يجب الا تكون صفر"
+
+#. module: tn_project_contract
+#: model:ir.model.fields,field_description:tn_project_contract.field_project_contract_line__remaining
+msgid "remaining of Price"
+msgstr "المتبقي"
